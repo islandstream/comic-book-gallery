@@ -11,7 +11,21 @@
 </head>
 <body>
     <div>
-        <h1>Hello from our view xxx 2222</h1>
+        <h1>@ViewBag.SeriesTitle</h1>
+        <h2>Issue Number @ViewBag.IssueNumber</h2>
+
+        <h5>Description</h5>
+        <div>@Html.Raw(ViewBag.Description)</div>
+        @if (ViewBag.Artists.Length > 0)
+        { 
+        <h5>Artist</h5>
+        <ul>
+            @foreach (var artist in ViewBag.Artists)
+            {
+                <li>@artist</li>
+           }
+        </ul>
+        }
     </div>
 </body>
 </html>
